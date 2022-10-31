@@ -1,0 +1,7 @@
+name: Hopperfilter
+version: '${project.version}'
+main: de.syskoh.hopperfilter.hopperfilter.Hopperfilter
+api-version: 1.18
+prefix: HopperFilter
+authors: [ Syskoh ]
+description: Filter hopper using item frames
