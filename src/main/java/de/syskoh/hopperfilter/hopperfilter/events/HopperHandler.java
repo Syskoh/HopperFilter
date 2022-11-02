@@ -39,6 +39,11 @@ public class HopperHandler implements Listener {
             entities.addAll(hopper.add(0,0,-2).getWorld().getNearbyEntities(hopper, radius, radius, radius));
 
             entities.forEach(entity -> {
+
+                if(hopper.distance(entity.getLocation()) < 0.4 || hopper.distance(entity.getLocation()) > 1.0) {
+                    return;
+                }
+
                 if(entity instanceof ItemFrame){
 
                     //Found ItemFrame, cancelling pickup
@@ -75,8 +80,6 @@ public class HopperHandler implements Listener {
                 if(hopper.distance(entity.getLocation()) < 0.4 || hopper.distance(entity.getLocation()) > 1.0) {
                     return;
                 }
-
-
                 if(entity instanceof ItemFrame){
                     //Found ItemFrame, cancelling pickup
                     event.setCancelled(true);
